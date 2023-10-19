@@ -8,4 +8,4 @@ Members:
 * Akshat Aryan
 * Arya Tapikar
 * Arya Umesh
-* Bhaskarla Sri Saahith
+* Bhaskarla Sri Saahi
