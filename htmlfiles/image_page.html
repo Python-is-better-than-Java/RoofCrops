@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Chatbot Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        section {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Image Page</h1>
+    </header>
+
+    <nav>
+
+        <a href="front_page.html">Home</a>
+        <a href="chatbot_page.html">Chat Bot</a>
+        <a href="image_page.html">Image</a>
+        <a href="faq.html">FAQs</a>
+        <a href="page4.html">Page 4</a>
+    </nav>
+
+    <section>
+        <h2>Welcome, lets find out what your plant is</h2>
+        <p>This is where you put your jpg file will be.</p>
+        <p>This is where you will have the image recognition thingy</p>
+        <!--  -->
+    </section>
+
+    <!-- File upload form -->
+    <section>
+    <form action="upload_image.php" method="post" enctype="multipart/form-data">
+        <label for="imageUpload">Upload an image (JPG or PDF):</label>
+        <input type="file" name="imageUpload" accept=".jpg, .jpeg, .pdf">
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+    </section>
+
+</body>
+</html>
