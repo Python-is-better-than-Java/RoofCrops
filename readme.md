@@ -8,4 +8,6 @@ Members:
 * Akshat Aryan
 * Arya Tapikar
 * Arya Umesh
-* Bhaskarla Sri Saahi
+* Bhaskarla Sri Saahith
+
+We are doing this using Django.
