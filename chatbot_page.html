@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Your Chatbot Page</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: rgb(95, 103, 99);
+				position: relative;
+			}
+
+			header {
+				background-color: rgb(10, 164, 95);
+				color: #fff;
+				padding: 20px;
+				text-align: center;
+			}
+
+			nav {
+				background-color: #555;
+				overflow: hidden;
+			}
+
+			nav a {
+				float: left;
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				transition: background-color 0.3s;
+			}
+
+			nav a:hover {
+				background-color: #777;
+				color: black;
+			}
+
+			section {
+				padding-top: 20px;
+			}
+
+			h2 {
+				color: #2c3e50;
+			}
+
+			p {
+				color: #555;
+				text-align: left;
+				margin-left: 200px;
+				margin-right: 200px;
+				padding-left: 10px;
+				padding-right: 10px;
+				color: #fff;
+			}
+			textarea {
+				background-color: white;
+				padding: 10px;
+				border: solid;
+				width: 1083px;
+				resize: none;
+				height: 55px;
+				box-sizing: border-box;
+				font-family: 'Poppins', sans-serif;
+				position: absolute;
+				left: 200px;
+			}
+			img {
+				border: solid;
+				cursor: pointer;
+				height: 50px;
+				width: 50px;
+				position: absolute;
+				right: 200px;
+			}
+			footer {
+				position: absolute;
+				bottom: -100px;
+				color: #fff;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<h1>Your Chatbot Page</h1>
+		</header>
+		<nav>
+
+			<a href="front_page.html">Home</a>
+			<a href="chatbot_page.html">Chat Bot</a>
+			<a href="image_page.html">Image</a>
+			<a href="faq.html">FAQs</a>
+			<a href="page4.html">Page 4</a>
+		</nav>
+		<main>	
+			<!-- The Setup -->	
+			<section id="setup-container">
+				<div class="setup-inner">
+				</div>
+				<div class="setup-inner setup-input-container" id="setup-input-container">
+					<p id="output-text"></p>     <!-- The Output -->
+					<textarea id="setup-textarea" placeholder="Enter your query here"></textarea> <!-- Input query here -->
+					<img src="images/send-btn-icon.png" class="send-btn" id="send-btn" aria-label="send" alt="send">
+				</div>
+			</section>
+		</main>	
+		<footer>
+			&copy; 2023 RoofCrops All rights reserved
+		</footer>
+		<script type="module" src="chatbot/index.js"></script>
+		<script type="module" src="chatbot/env.js"></script>
+	</body>
+</html>
