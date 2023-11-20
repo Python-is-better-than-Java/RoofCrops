@@ -87,6 +87,7 @@
 		</style>
 	</head>
 
+	{% load static %}
 	<body>
 		<header>
 			<h1>Your Chatbot Page</h1>
@@ -107,11 +108,11 @@
 				<div class="setup-inner setup-input-container" id="setup-input-container">
 					<p id="output-text"></p>     <!-- The Output -->
 					<textarea id="setup-textarea" placeholder="Enter your query here"></textarea> <!-- Input query here -->
-					<img src="images/send-btn-icon.png" class="send-btn" id="send-btn" aria-label="send" alt="send">
+					<img src="{% static 'chatbot/images/send-btn-icon.png' %}" class="send-btn" id="send-btn" aria-label="send" alt="send">
 				</div>
 			</section>
 		</main>
-		<script type="module" src="chatbot/index.js"></script>
-		<script type="module" src="chatbot/env.js"></script>
+		<script type="module" src="{% static 'chatbot/index.js' %}"></script>
+		<script type="module" src="{% static 'chatbot/env.js' %}"></script>
 	</body>
 </html>
