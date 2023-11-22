@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "{{ url_for('static', filename='image_rec.js') }}"></script>
+    <script src = "{% static 'imagerec/image_rec.js' %}"></script>
     <title>Your Chatbot Page</title>
     <style>
         body {
@@ -80,7 +81,7 @@
 
     <!-- File upload form -->
     <section>
-    <form id="image" enctype="multipart/form-data">
+    <form id="image" enctype="multipart/form-data" action="/imagerec/predict" method="post">
         <label for="imageUpload">Upload an image (JPG):</label>
         <input type="file" name="imageUpload" id = "imageUpload" accept=".JPG, .jpeg, .jpg">
         <br>
