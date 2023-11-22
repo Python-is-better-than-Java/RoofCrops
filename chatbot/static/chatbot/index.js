@@ -1,60 +1,18 @@
-import {process} from "./env.js"
 const setupTextarea = document.getElementById('setup-textarea')
-const setuploading = document.getElementById('output-container')
-const setupInputContainer = document.getElementById('setup-input-container')
-const movieBossText = document.getElementById('movie-boss-text')
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY
+const OPENAI_API_KEY = "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"
 const url = "https://api.openai.com/v1/completions"
 
-// $(window).on('load', function(){
-//     $("#output-container").css('display', 'block');
-// });
 document.getElementById("send-btn").addEventListener("click", () => {
-    //setupInputContainer.innerHTML = '<img src="images/loading.svg" class="loading" id="loading">'
-    //movieBossText.innerText = "OK, just wait a second while my digital brain digests that..."
     var prompttext = setupTextarea.value;
     fetchSynopsis(prompttext);
 })
-async function fetchBotReply(outline){
-    const response = await fetchAPI(url, {
-        method: 'POST',
-        headers: {
-            "Content-Type":"application/json",
-            "Authorization":"Bearer " + OPENAI_API_KEY
-        },
-        body: JSON.stringify({
-            'model':'text-davinci-003',
-            'prompt':`Generate a short answer to say that you need some time to generate the required information about the plant
-            and the agricultural practices required to grow it.
-            ###
-            OUTLINE: I want to grow rafflesias in my garden. What soil and environmental conditions do I require?
-            ANSWER: Rafflesias? Sounds interesting. Give me some time to generate the information about the plant and the required conditions to grow it.
-            ###
-            OUTLINE: I live in the equatorial region. Which plants can I grow on the terrace of my home?
-            ANSWER: There are a lot of plants you can grow. Give me some time to generate the reqiured information.
-            ###
-            OUTLINE: Give me a list of plants that I cannot grow on the terrace of my home.
-            ANSWER: There is a very long list of such plants. I need some time to generate a proper list of some such plants.
-            ###
-            OUTLINE: ${outline}
-            ANSWER:
-            `,
-            'max_tokens':100,
-            'temperature':0.8,
-        })
-    })
-    const data = await response.json();
-    //setupInputContainer.innerHTML = '<img src="images/check.svg">'
-    //movieBossText.innerText = data.choices[0].text
-    fetchSynopsis(outline)
-}
 
 async function fetchSynopsis(outline){
     const response = await fetchAPI(url, {
         method: 'POST',
         headers: {
             "Content-Type":"application/json",
-            "Authorization":"Bearer " + OPENAI_API_KEY
+            "Authorization":`Bearer ${OPENAI_API_KEY}`
         },
         body: JSON.stringify({
             'model':'text-davinci-003',
@@ -215,7 +173,6 @@ async function fetchSynopsis(outline){
         })
     })
     const data = await response.json();
-    //setuploading.style.display = "block";
     document.getElementById('output-text').innerText = data.choices[0].text
 }
 
@@ -223,7 +180,6 @@ async function fetchSynopsis(outline){
 async function fetchAPI(url, options){
     const response = await fetch(url, options);
     if (response.status === 429){
-        //Handle rate limit by waiting and retrying the request after a delay
         const retryAfter = parseInt(response.headers.get('Retry-After')) || 1;
         await sleep(retryAfter * 1000);
         return fetchAPI(url, options);

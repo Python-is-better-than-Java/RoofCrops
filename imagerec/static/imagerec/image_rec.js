@@ -1,7 +1,7 @@
 window.onload = function(){
     const image_input = document.getElementById('imageUpload')
     const formSelect = document.getElementById('image')
-    const OPENAI_API_KEY = "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"
+    const OPENAI_API_KEY = "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"
     const url = "https://api.openai.com/v1/completions"
 
     function predict(callback){
