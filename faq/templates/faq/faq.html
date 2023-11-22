@@ -52,6 +52,19 @@
         p {
             color: #555;
         }
+
+        .faq-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        .faq-table td {
+            border: 1.5px solid black;
+            background-color: #cccccc;
+            padding: 10px;
+            text-align: left;
+        }
+
     </style>
 </head>
 <body>
@@ -72,7 +85,22 @@
     <section>
         <h2>Welcome to the FAQ Page!</h2>
         <p>This is where your FAQs will be placed once it's developed.</p>
-        <!-- Add your chatbot code here when it's ready -->
+        <!-- Add your faq code here when it's ready -->
+        <table class="faq-table">
+            {% for faq in faqs %}
+                <tr>
+                    <td rowspan="2">{{ forloop.counter }}</td>
+                    <td>
+                        <strong>Question:</strong> {{ faq.question }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Answer:</strong> {{ faq.answer }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
     </section>
 
 </body>

@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+class Faq(models.Model):
+    no = models.IntegerField(primary_key=True)
+    question = models.TextField()
+    answer = models.TextField()
