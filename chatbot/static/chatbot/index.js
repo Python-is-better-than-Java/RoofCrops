@@ -1,5 +1,5 @@
 const setupTextarea = document.getElementById('setup-textarea')
-const OPENAI_API_KEY = "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"
+const OPENAI_API_KEY = ""
 const url = "https://api.openai.com/v1/completions"
 
 document.getElementById("send-btn").addEventListener("click", () => {
