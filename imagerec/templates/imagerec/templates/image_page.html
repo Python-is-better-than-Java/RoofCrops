@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "{{ url_for('static', filename='image_rec.js') }}"></script>
     <title>Your Chatbot Page</title>
     <style>
         body {
@@ -79,12 +80,14 @@
 
     <!-- File upload form -->
     <section>
-    <form action="upload_image.php" method="post" enctype="multipart/form-data">
-        <label for="imageUpload">Upload an image (JPG or PDF):</label>
-        <input type="file" name="imageUpload" accept=".jpg, .jpeg, .pdf">
+    <form id="image" enctype="multipart/form-data">
+        <label for="imageUpload">Upload an image (JPG):</label>
+        <input type="file" name="imageUpload" id = "imageUpload" accept=".JPG, .jpeg, .jpg">
         <br>
-        <input type="submit" value="Upload">
+        <input type="submit" value = "upload" id = "submitbtn">
     </form>
+    <div id = 'result'></div></section></body><br/>
+    <div id = "chat_result"></textarea>
     </section>
 
 </body>
